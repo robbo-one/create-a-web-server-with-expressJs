@@ -26,3 +26,5 @@ server.get('/profiles/:id', (req, res) => {
   }
 })
 
+server.use(express.static('public'))
+
