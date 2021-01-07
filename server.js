@@ -15,5 +15,11 @@ server.get('/compliment', (request, response) => {
 //Routes
 //http://localhost:3000/profile
 server.get('/profile', (request, response) => {
+  if (request.query.name == 'silvia') {
   response.sendFile(__dirname + '/silvia.html')
+  } else if (request.query.name == 'sampson') {
+      response.sendFile(__dirname + '/sampson.html')
+    }
 })
+
+
