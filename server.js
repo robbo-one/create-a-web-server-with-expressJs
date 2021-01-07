@@ -15,4 +15,13 @@ server.get ("/profile", (req, res) =>{
 
 })
 
+server.get ("/profiles/:id", (req, res) =>{
+  if(req.params.id === "1") {
+    res.sendFile(__dirname + '/silvia.html')
+  } else if(req.params.id === "2") {
+    res.sendFile(__dirname + '/sampson.html')
+  }
+
+})
+
 module.exports = server
