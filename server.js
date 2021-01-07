@@ -9,7 +9,11 @@ server.get("/compliment", (request, response) => {
 
 //Question 2 - Silvia's profile
 server.get("/profile", (request, response) => {
-  response.sendFile(__dirname + "/silvia.html");
+  if (request.query.name === "silvia") {
+    response.sendFile(__dirname + "/silvia.html");
+  } else if (request.query.name === "sampson") {
+    response.sendFile(__dirname + "/sampson.html");
+  }
 });
 
 module.exports = server;
