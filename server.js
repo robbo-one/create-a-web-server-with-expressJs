@@ -9,8 +9,15 @@ server.get('/compliment', (req, res) => {
 })
 
 server.get('/profile', (req, res) => {
-    res.sendFile(__dirname + '/silvia.html')
+    if (req.query.name === 'sampson') {
+        res.sendFile(__dirname + '/sampson.html')
+    } else if (req.query.name === 'silvia') {
+        res.sendFile(__dirname + '/silvia.html')
+    }
+    console.log(req.query.name)
 })
+
+server.get('/profiles')
 
 module.exports = server
 
