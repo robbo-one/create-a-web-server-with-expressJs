@@ -11,6 +11,10 @@ server.get("/compliment", (req, res) => {
   res.send('nice hair dude(non gender specific dude)')
 })
 
+server.get('/profile', (req, res) => {
+  res.sendFile(__dirname + '/silvia.html')
+})
+
 
 
 
