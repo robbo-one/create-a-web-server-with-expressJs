@@ -1,7 +1,7 @@
 const server = require('./server')
 
 const port = process.env.PORT || 3000
-// server.use(express.static('public'))
+
 
 
 server.listen(port, function () {
