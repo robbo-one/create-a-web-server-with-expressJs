@@ -1,5 +1,15 @@
-const express = require('express')
+const express = require("express");
 
-const server = express()
+const server = express();
 
-module.exports = server
+
+
+server.get('/compliment', (request, response) => {
+  response.send("You have beautiful eyes");
+});
+
+
+
+
+
+module.exports = server;
