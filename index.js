@@ -20,6 +20,16 @@ server.get('/profile/', (req, res) => {
   } 
 })
 
+server.get('/profiles/:id', (req, res) => {
+  if (req.params.id === '1') {
+    res.sendFile(__dirname + '/silvia.html')
+  } 
+  if (req.params.id === '2') {
+    res.sendFile(__dirname + '/sampson.html')
+  } 
+  console.log(req.params.id)
+})
+
 // server.get('/profile/', (req, res) => {
 //   res.sendFile(__dirname + '/sampson.html')
 // })
