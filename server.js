@@ -17,7 +17,15 @@ server.get('/profile', (req, res) => {
     console.log(req.query.name)
 })
 
-server.get('/profiles')
+server.get('/profiles', (req, res) => {
+    if (req.params.id === 'sampson') {
+        res.sendFile(__dirname + '/sampson.html')
+    } else if (req.params.id === 'silvia') {
+        res.sendFile(__dirname + '/silvia.html')
+    }
+    console.log(req.params.id)
+
+})
 
 module.exports = server
 
