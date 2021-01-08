@@ -24,4 +24,6 @@ server.get("/profiles/:id", (request, response) => {
   }
 });
 
+server.use(express.static("public"));
+
 module.exports = server;
