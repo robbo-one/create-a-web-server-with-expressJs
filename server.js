@@ -2,6 +2,15 @@ const express = require("express");
 
 const server = express();
 
+// Middleware
+server.use(express.static("public"));
+server.use(express.urlencoded({ extended: true }));
+
+//
+server.post("/named-compliment", (request, response) => {
+  response.send(request.body.name + " you have a nice smile");
+});
+
 // Give a compliment
 server.get("/compliment", (request, response) => {
   response.send("You have beautiful eyes");
@@ -24,7 +33,5 @@ server.get("/profiles/:id", (request, response) => {
     response.sendFile(__dirname + "/sampson.html");
   }
 });
-
-server.use(express.static("public"));
 
 module.exports = server;
