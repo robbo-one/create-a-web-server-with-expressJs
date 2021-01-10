@@ -4,6 +4,9 @@ const server = express()
 
 const PORT = 3000
 
+server.use(express.static('public'))
+server.use(express.urlencoded({ extended: true }))
+
 server.get('/compliment', (req, res) => {
     res.send('<h1>Kia Ora</h1>')
 })
@@ -22,6 +25,10 @@ server.get('/profiles/:id', (req, res) => {
     } else if (req.params.id === '2') {
         res.sendFile(__dirname + '/sampson.html')
     }
+})
+
+server.post('/named-compliment', (req, res) => {
+    res.send('You look nice ' + req.body.name)
 })
 
 module.exports = server
