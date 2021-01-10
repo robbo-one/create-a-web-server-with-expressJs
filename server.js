@@ -13,10 +13,10 @@ server.get('/', (request, response) => {
 //   response.sendFile(__dirname + '/silvia.html')
 // })
 
-server.get('/profile/1', (req, res) => {
+server.get('/profiles/1', (req, res) => {
   res.sendFile(__dirname + '/silvia.html')
 })
 
-server.get('/profile/2', (req, res) => {
+server.get('/profiles/2', (req, res) => {
   res.sendFile(__dirname + '/sampson.html')
 })
